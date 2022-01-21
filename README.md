@@ -28,10 +28,12 @@ struct Person {
 Person[] people; // dynamic Array, we can keep adding to it
 ```
 
-* Private/ Public/ :
+* Private/ Public/ Internal/ External:
 
 > Private: chỉ các hàm trong body của contract nó gọi được
 > Public: đúng như tên
+> Internal: Giống private nhưng những contract thừa kế cũng gọi được.
+> External: chỉ có thể gọi bên ngoài contract
 
 
 * Function:

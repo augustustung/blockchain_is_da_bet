@@ -85,3 +85,22 @@ function _doStuff(Zombie storage _zombie) internal {
 ```
  
 > Remember to have the last line of the modifier call the rest of the function with `_;`.
+
+* Saving Gas With 'View' Functions
+
+> view functions don't cost any gas when they're called externally by a user.
+
+```
+function getZombiesByOwner(address _owner) external view returns(uint[] memory) {
+    uint[] memory result = new uint[](ownerZombieCount[_owner]);
+    // Start here
+    uint counter = 0;
+    for (uint i= 0; i < zombies.length; i++) {
+      if (zombieToOwner[i] == _owner) {
+        result[counter] = i;
+        counter++;
+      }
+    }
+    return result;
+  }
+```
